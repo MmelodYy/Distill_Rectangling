@@ -24,28 +24,33 @@ torchvision==0.13.1+cu116
 ## Training Teacher 2 Model
 
 ```
-python 
+python train.py
 ```
 
 ## Training Student Model
 ####  Step 1:Generating an offline mesh knowledge base based on Teacher 1 and Teacher 2
 
 ```
-python 
+python teacher1_gen_mesh_knowledges.py
 ```
 
-####  Step 2:training the student model
+```
+python teacher2_gen_mesh_knowledges.py
+```
+
+####  Step 2:Training the student model
 
 ```
-python 
+python train_2teachers_weight.py
 ```
 
 
 ## Testing Student Model
-Our pretrained teacher 2 model and student model can be available at [Google Drive](https://drive.google.com/drive/folders/12fLswn9o8FVLoqewfHIWazhphBY3LD4h?usp=drive_link). Addionally, the pretrained teacher 1 model and student model can be available at [Google Drive](https://drive.google.com/drive/folders/1gEsE-7QBPcbH-kfHqYYR67C-va7vztxO?usp=sharing).
+Our pretrained teacher 2 model and student model can be available at [Google Drive](https://drive.google.com/file/d/1LFadsV1fg-DCT9IjiKbPlIaflUdHhNVl/view?usp=sharing). Addionally, the pretrained teacher 1 model and student model can be available at [Google Drive](https://drive.google.com/drive/folders/1gEsE-7QBPcbH-kfHqYYR67C-va7vztxO?usp=sharing).
 #### Caculate the rectangling performance
+
 ```
-python 
+python test.py
 ```
 
 
