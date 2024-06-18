@@ -21,6 +21,8 @@ torch==1.12.1+cu116
 
 torchvision==0.13.1+cu116
 
+tensorflow-gpu==2.10.0
+
 ## Training
 The project is an image rectangling task. We construct an instance-level distillation strategy based on the a priori lattice knowledge base of Teacher Model 1 and Teacher Model 2 to guide the learning of student models. Among them, the specific training steps for the student model are as follows:
 
