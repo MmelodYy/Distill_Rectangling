@@ -21,29 +21,39 @@ torch==1.12.1+cu116
 
 torchvision==0.13.1+cu116
 
-## Training Teacher 2 Model
+The project is an image rectangling task. We construct an instance-level distillation strategy based on the a priori lattice knowledge base of Teacher Model 1 and Teacher Model 2 to guide the learning of student models. Among them, the specific training steps for the student model are as follows:
+
+Please modify the following paths in the files "DeepRectangling_Teacher1(Initial)/Codes/constant.py" and "DeepRectangling_Teacher2(Improved)/Codes/constant.py" to match the dataset and project paths:
+
+1."TRAIN_FOLDER": Update this variable to the path of your training dataset.
+2."TEST_FOLDER": Update this variable to the path of your testing dataset.
+3."SNAPSHOT_DIR": Update this variable to the directory where you want to save the trained models.
+4."SUMMARY_DIR": Update this variable to the directory where you want to save the summary files.
+
+## Step1: Prepare the pre-training weights file for teacher model 1
+Download the pre-training weight for teacher Model 1 and put them under the path "DeepRectangling_Teacher1(Initial)/Codes/checkpoints". Because we are based directly on DeepRectangling, we will not do any retraining here. The weight file can be found inside the [DeepRectangling](https://github.com/nie-lang/DeepRectangling?tab=readme-ov-file) project.
+
+
+## Step2: Training Teacher 2 Model
 
 ```
 python train.py
 ```
 
-## Training Student Model
-####  Step 1:Generating an offline mesh knowledge base based on Teacher 1 and Teacher 2
-
+## Step3: Generating an offline mesh knowledge base based on Teacher 1 and Teacher 2
+Run "teacher1_gen_mesh_knowledges.py" and "teacher2_gen_mesh_knowledges.py" and "teacher2_gen_mesh_knowledges.py" under "DeepRectangling_Teacher1(Initial)/Codes/" and "DeepRectangling_Teacher2(Improved)/Codes/" respectively. " The purpose of this process is to generate the mesh knowledges and weights corresponding to the two teacher models (here we use the SSIM value of the model on the training data set as the weight metric).
 ```
 python teacher1_gen_mesh_knowledges.py
 ```
-
 ```
 python teacher2_gen_mesh_knowledges.py
 ```
 
-####  Step 2:Training the student model
+## Step 4: Training Student Model
 
 ```
-python train_2teachers_weight.py
+python train.py
 ```
-
 
 ## Testing Student Model
 Our pretrained teacher 2 model and student model can be available at [Google Drive](https://drive.google.com/file/d/1LFadsV1fg-DCT9IjiKbPlIaflUdHhNVl/view?usp=sharing). Addionally, the pretrained teacher 1 model and student model can be available at [Google Drive](https://drive.google.com/drive/folders/1gEsE-7QBPcbH-kfHqYYR67C-va7vztxO?usp=sharing).
