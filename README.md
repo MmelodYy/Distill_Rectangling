@@ -36,12 +36,12 @@ Please modify the following paths in the files "DeepRectangling_Teacher1(Initial
 
 4."SUMMARY_DIR": Update this variable to the directory where you want to save the summary files.
 
-### Step1: Prepare the pre-training weights for teacher model 1
+### Step1: Preparing the pre-training weights for teacher model 1
 Download the pre-training weight for teacher Model 1 and put them under the path "DeepRectangling_Teacher1(Initial)/Codes/checkpoints". Because we are based directly on DeepRectangling, we will not do any retraining here. The weight file can be found inside the [DeepRectangling](https://github.com/nie-lang/DeepRectangling?tab=readme-ov-file) project.
 
 
 ### Step2: Training Teacher 2 Model
-Enter the "DeepRectangling_Teacher2(Improved)/Codes" file directory.
+Enter into the "DeepRectangling_Teacher2(Improved)/Codes" file directory.
 ```
 python train.py
 ```
