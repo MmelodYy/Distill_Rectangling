@@ -34,17 +34,17 @@ Please modify the following paths in the files "DeepRectangling_Teacher1(Initial
 
 4."SUMMARY_DIR": Update this variable to the directory where you want to save the summary files.
 
-### Step1: Prepare the pre-training weights file for teacher model 1
+### Step1: Prepare the pre-training weights for teacher model 1
 Download the pre-training weight for teacher Model 1 and put them under the path "DeepRectangling_Teacher1(Initial)/Codes/checkpoints". Because we are based directly on DeepRectangling, we will not do any retraining here. The weight file can be found inside the [DeepRectangling](https://github.com/nie-lang/DeepRectangling?tab=readme-ov-file) project.
 
 
 ### Step2: Training Teacher 2 Model
-
+Enter the "DeepRectangling_Teacher2(Improved)/Codes" file directory.
 ```
 python train.py
 ```
 
-### Step3: Generating an offline mesh knowledge base based on Teacher 1 and Teacher 2
+### Step3: Generating an offline mesh knowledges base based on Teacher 1 and Teacher 2
 Run "teacher1_gen_mesh_knowledges.py" and "teacher2_gen_mesh_knowledges.py" and "teacher2_gen_mesh_knowledges.py" under "DeepRectangling_Teacher1(Initial)/Codes/" and "DeepRectangling_Teacher2(Improved)/Codes/" respectively. " The purpose of this process is to generate the mesh knowledges and weights corresponding to the two teacher models (here we use the SSIM value of the model on the training data set as the weight metric).
 ```
 python teacher1_gen_mesh_knowledges.py
@@ -54,7 +54,7 @@ python teacher2_gen_mesh_knowledges.py
 ```
 
 ### Step 4: Training Student Model
-Enter the "DeepRectangling_student" file directory.
+Enter into the "DeepRectangling_student" file directory. Modify the corresponding file path to the corresponding file path under your project. (eg: 'path', 'dis_mesh_path_TeacherImprove', 'dis_mesh_path_TeacherOR', 'dis_mesh_path_TeacherImprove_weight', 'dis_mesh_path_TeacherOR_weight')
 ```
 python train.py
 ```
@@ -63,13 +63,13 @@ python train.py
 Our pretrained teacher 2 model and student model can be available at [Google Drive](https://drive.google.com/file/d/1LFadsV1fg-DCT9IjiKbPlIaflUdHhNVl/view?usp=sharing). Addionally, the pretrained teacher 1 model and student model can be available at [Google Drive](https://drive.google.com/drive/folders/1gEsE-7QBPcbH-kfHqYYR67C-va7vztxO?usp=sharing).
 
 ### Testing student model
-Enter the "DeepRectangling_student" file directory.
+Enter into the "DeepRectangling_student" file directory.
 ```
 python test.py
 ```
 
 ### Testing teacher 2 model
-Enter the "DeepRectangling_Teacher2(Improved)/Codes" file directory.
+Enter into the "DeepRectangling_Teacher2(Improved)/Codes" file directory.
 ```
 python inference.py
 ```
