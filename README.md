@@ -47,7 +47,7 @@ python train.py
 ```
 
 ### Step3: Generating an offline mesh knowledges base based on Teacher 1 and Teacher 2
-Run "teacher1_gen_mesh_knowledges.py" and "teacher2_gen_mesh_knowledges.py" under "DeepRectangling_Teacher1(Initial)/Codes/" and "DeepRectangling_Teacher2(Improved)/Codes/" respectively. " The purpose of this process is to generate the mesh knowledges and weights corresponding to the two teacher models (here we use the SSIM value of those models on the training data set as their weight metric).
+Run "teacher1_gen_mesh_knowledges.py" and "teacher2_gen_mesh_knowledges.py" under "DeepRectangling_Teacher1(Initial)/Codes/" and "DeepRectangling_Teacher2(Improved)/Codes/" respectively. " The purpose of this process is to generate the mesh knowledges and weights corresponding to the two teacher models (here we use the SSIM value of these models on the training data set as their weight metric).
 ```
 python teacher1_gen_mesh_knowledges.py
 ```
