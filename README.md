@@ -1,5 +1,5 @@
 <h1 align = "center">Faster,Lighter,Stronger: Image Rectangling Using Multi-Teacher Instance-Level Distillation</h1>
-<p align="center">Yuan Mei*, Lichun Yang', Mengsi Wang*, Yidan GAo`, Kaijun Wu*</p>
+<p align="center">Yuan Mei*, Lichun Yang', Mengsi Wang*, Yidan Gao`, Kaijun Wu*</p>
 <p align="center">* the School of Electronic and Information Engineering, Lanzhou Jiaotong University</p>
 <p align="center">' the Key Lab of Opt-Electronic Technology and Intelligent Control of Ministry of Education, Lanzhou Jiaotong University</p>
 <p align="center">` the School of Software Engineering, Chongqing University of Posts and Telecommunications</p>
