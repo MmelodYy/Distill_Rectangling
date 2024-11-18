@@ -228,7 +228,7 @@ class Distill_loss_2Teacher_Weight(nn.Module):
         ds_loss =  ds_loss1 +  ds_loss2
         # total loss
         primary_img_loss = appearance_loss * self.lam_appearance + perception_loss * self.lam_ssim + mesh_loss * self.lam_mesh  # + mask_loss * self.lam_appearance
-        total_loss = primary_img_loss * self.lam_primary_weight + ds_loss1 * self.lam_distill_weight
+        total_loss = primary_img_loss * self.lam_primary_weight + ds_loss * self.lam_distill_weight
         return total_loss*10, primary_img_loss * self.lam_primary_weight*10,ds_loss * self.lam_distill_weight *10
 
 
