@@ -91,7 +91,7 @@ with tf.Session(config=config) as sess:
             psnr = compare_psnr(warp_image2, warp_gt, data_range=255)
             ssim = compare_ssim(warp_image2, warp_gt, data_range=255, channel_axis=2)
 
-            path_mesh = "./result/train_final_mesh/" + str(i + 1).zfill(5) + ".npy"
+            path_mesh = "../result/train_final_mesh/" + str(i + 1).zfill(5) + ".npy"
             np.save(path_mesh, mesh_mid)
 
             # path = "../train_final_img/" + str(i + 1).zfill(5) + ".jpg"
